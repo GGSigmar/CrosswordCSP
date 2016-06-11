@@ -310,12 +310,8 @@ public class Crossword
         System.out.print("\n\n");
     }
 
-    //int licznik = 0;
-
     public boolean backTracking(WordList danaLista, Crossword krzyzowka)
     {
-        // To understand recursion, see the bottom of this method
-
         if(usedWords.size()==wordsReq)
         {
             return true;
@@ -328,8 +324,6 @@ public class Crossword
                 drawCrossword();
                 System.out.println("\n"+usedWords.size()+"\n");
 
-                //licznik++;
-
                 if(backTracking(danaLista, krzyzowka))
                 {
                     return true;
@@ -337,11 +331,8 @@ public class Crossword
             }
         }
 
-        //System.out.println("Zbaktrakowalem "+licznik);
         usedWords.removeLast();
         return false;
-
-        // To understand recursion, see the top of this method
     }
 
     public int boardScore()
